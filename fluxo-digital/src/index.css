@@ -1,0 +1,653 @@
+/* ============================================================
+   FLUXO DIGITAL — Estilos Personalizados
+   Complementa o Bootstrap 5 com identidade visual tecnológica
+   ============================================================ */
+
+/* --- Variáveis de Design System --- */
+:root {
+  --cor-primaria: #0f172a;
+  --cor-secundaria: #1e3a5f;
+  --cor-destaque: #6366f1;
+  --cor-destaque-hover: #4f46e5;
+  --cor-destaque-suave: rgba(99, 102, 241, 0.12);
+  --cor-fundo: #f1f5f9;
+  --cor-fundo-alt: #e8edf5;
+  --cor-texto-claro: #ffffff;
+  --cor-texto-escuro: #1e293b;
+  --cor-texto-muted: #64748b;
+  --cor-card-fundo: #ffffff;
+  --cor-card-borda: #e2e8f0;
+  --sombra-card: 0 2px 12px rgba(15, 23, 42, 0.08);
+  --sombra-card-hover: 0 12px 32px rgba(99, 102, 241, 0.18);
+  --raio-borda: 12px;
+  --transicao-padrao: 0.3s ease;
+}
+
+/* --- Reset e Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-escuro);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Tipografia --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* ============================================================
+   CABEÇALHO
+   ============================================================ */
+.cabecalho {
+  background-color: var(--cor-primaria);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  backdrop-filter: blur(8px);
+}
+
+.cabecalho .navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--cor-texto-claro) !important;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cabecalho .navbar-brand .brand-icon {
+  color: var(--cor-destaque);
+}
+
+.cabecalho .nav-link {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 6px;
+  transition: color var(--transicao-padrao), background-color var(--transicao-padrao);
+}
+
+.cabecalho .nav-link:hover,
+.cabecalho .nav-link:focus {
+  color: var(--cor-texto-claro) !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.cabecalho .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cabecalho .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ============================================================
+   BANNER PRINCIPAL (HERO)
+   ============================================================ */
+.banner-principal {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 60%, #1a2f5a 100%);
+  color: var(--cor-texto-claro);
+  padding: 5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-principal::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.banner-principal::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.banner-principal .badge-topo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--cor-destaque-suave);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.banner-principal h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.banner-principal h1 .destaque-titulo {
+  color: var(--cor-destaque);
+  position: relative;
+}
+
+.banner-principal .subtitulo {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  margin-bottom: 2.25rem;
+  line-height: 1.7;
+}
+
+/* Botão CTA principal */
+.btn-cta {
+  background-color: var(--cor-destaque);
+  color: var(--cor-texto-claro);
+  border: none;
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition:
+    background-color var(--transicao-padrao),
+    transform 0.2s ease,
+    box-shadow var(--transicao-padrao);
+  cursor: pointer;
+}
+
+.btn-cta:hover,
+.btn-cta:focus {
+  background-color: var(--cor-destaque-hover);
+  color: var(--cor-texto-claro);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+  text-decoration: none;
+}
+
+.btn-cta:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Decoração visual do banner */
+.banner-decoracao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner-decoracao .circulo-externo {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulsar 3s ease-in-out infinite;
+}
+
+.banner-decoracao .circulo-interno {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--cor-destaque-suave);
+  border: 2px solid rgba(99, 102, 241, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-decoracao .icone-central {
+  color: var(--cor-destaque);
+}
+
+@keyframes pulsar {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+
+/* ============================================================
+   SEÇÃO CATÁLOGO DE SERVIÇOS
+   ============================================================ */
+.secao-catalogo {
+  background-color: var(--cor-fundo);
+  padding: 5rem 0;
+}
+
+.secao-titulo {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: var(--cor-texto-escuro);
+  letter-spacing: -0.02em;
+}
+
+.secao-subtitulo {
+  color: var(--cor-texto-muted);
+  font-size: 1.05rem;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.linha-destaque {
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cor-destaque), #818cf8);
+  border-radius: 2px;
+  margin: 0.75rem auto 0;
+}
+
+/* ============================================================
+   CARD DE SERVIÇO
+   ============================================================ */
+.card-servico {
+  background-color: var(--cor-card-fundo);
+  border: 1px solid var(--cor-card-borda);
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-card);
+  transition:
+    transform var(--transicao-padrao),
+    box-shadow var(--transicao-padrao),
+    border-color var(--transicao-padrao);
+  height: 100%;
+}
+
+.card-servico:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-card-hover);
+  border-color: var(--cor-destaque);
+}
+
+.icone-wrapper {
+  width: 56px;
+  height: 56px;
+  background-color: var(--cor-destaque-suave);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-destaque);
+  transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
+}
+
+.card-servico:hover .icone-wrapper {
+  background-color: var(--cor-destaque);
+  color: var(--cor-texto-claro);
+  transform: scale(1.08);
+}
+
+.card-servico .card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cor-texto-escuro);
+}
+
+.card-servico .card-text {
+  font-size: 0.92rem;
+  color: var(--cor-texto-muted);
+  line-height: 1.65;
+}
+
+/* Botão dos cards de serviço */
+.btn-servico {
+  background-color: transparent;
+  color: var(--cor-destaque);
+  border: 1.5px solid var(--cor-destaque);
+  padding: 0.55rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  transition:
+    background-color var(--transicao-padrao),
+    color var(--transicao-padrao),
+    transform 0.2s ease;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-servico:hover,
+.btn-servico:focus {
+  background-color: var(--cor-destaque);
+  color: var(--cor-texto-claro);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   SEÇÃO DESTAQUE (DIFERENCIAIS)
+   ============================================================ */
+.secao-destaque {
+  background: linear-gradient(180deg, var(--cor-fundo-alt) 0%, var(--cor-fundo) 100%);
+  padding: 5rem 0;
+}
+
+.diferencial-card {
+  background-color: var(--cor-card-fundo);
+  border: 1px solid var(--cor-card-borda);
+  border-top: 4px solid var(--cor-destaque);
+  border-radius: var(--raio-borda);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--sombra-card);
+  transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+  height: 100%;
+}
+
+.diferencial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-card-hover);
+}
+
+.diferencial-icone {
+  width: 64px;
+  height: 64px;
+  background-color: var(--cor-destaque-suave);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-destaque);
+  margin: 0 auto 1.25rem;
+}
+
+.diferencial-numero {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--cor-destaque);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.diferencial-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cor-texto-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.diferencial-descricao {
+  font-size: 0.88rem;
+  color: var(--cor-texto-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+.rodape {
+  background-color: var(--cor-primaria);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rodape .rodape-marca {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--cor-texto-claro);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.rodape .rodape-marca .brand-icon {
+  color: var(--cor-destaque);
+}
+
+.rodape .rodape-tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.rodape .rodape-divider {
+  border-color: rgba(255, 255, 255, 0.08);
+  margin: 1.5rem 0;
+}
+
+.rodape .rodape-autores {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.rodape .rodape-autores strong {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rodape .rodape-copyright {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================================
+   UTILITÁRIOS E ACESSIBILIDADE
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Scroll suave para âncoras */
+section {
+  scroll-margin-top: 70px;
+}
+
+/* Responsividade extra para textos do banner */
+@media (max-width: 576px) {
+  .banner-principal {
+    padding: 3.5rem 0 3rem;
+    text-align: center;
+  }
+
+  .banner-principal .subtitulo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   MODAL EM BREVE
+   ============================================================ */
+.modal-embreve-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  animation: fadeInOverlay 0.2s ease;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-embreve-caixa {
+  background-color: var(--cor-card-fundo);
+  border-radius: 16px;
+  padding: 2.5rem 2rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.35);
+  animation: slideUpModal 0.25s ease;
+}
+
+@keyframes slideUpModal {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* Botão fechar (X) */
+.modal-embreve-fechar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--cor-texto-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transicao-padrao), background-color var(--transicao-padrao);
+}
+
+.modal-embreve-fechar:hover {
+  color: var(--cor-texto-escuro);
+  background-color: var(--cor-fundo);
+}
+
+/* Área do ícone de engrenagem */
+.modal-embreve-icone {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.engrenagem-externa {
+  color: var(--cor-destaque);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.engrenagem-pequena {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #818cf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animações das engrenagens */
+.engrenagem-gira {
+  animation: girarEngrenagem 4s linear infinite;
+}
+
+.engrenagem-gira-inverso {
+  animation: girarEngrenagem 3s linear infinite reverse;
+}
+
+@keyframes girarEngrenagem {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Textos do modal */
+.modal-embreve-titulo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--cor-texto-escuro);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.02em;
+}
+
+.modal-embreve-servico {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--cor-destaque);
+  margin-bottom: 1rem;
+}
+
+.modal-embreve-texto {
+  font-size: 0.92rem;
+  color: var(--cor-texto-muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+/* Badge "em manutenção" */
+.modal-embreve-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Botão "Entendido" */
+.modal-embreve-btn {
+  background-color: var(--cor-destaque);
+  color: var(--cor-texto-claro);
+  border: none;
+  padding: 0.7rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition:
+    background-color var(--transicao-padrao),
+    transform 0.2s ease;
+}
+
+.modal-embreve-btn:hover {
+  background-color: var(--cor-destaque-hover);
+  transform: translateY(-1px);
+}
